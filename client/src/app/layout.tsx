@@ -26,7 +26,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          
           <div className="flex flex-row">
             <Navber/>
             <div className="">
