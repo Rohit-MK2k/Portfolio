@@ -22,7 +22,7 @@ export default function RootLayout({
         <div className="flex flex-row">
           <ThemeProvider
             attribute="class"
-            defaultTheme="light"
+            defaultTheme="system"
             enableSystem
             disableTransitionOnChange
             >
