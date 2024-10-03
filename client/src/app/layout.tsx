@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Navber from "@/app/components/navber"
 import { ThemeProvider } from "next-themes"
 import "./globals.css";
+import StoreProvider from "@/app/Redux/StoreProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,17 +20,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex flex-row h-screen p-8">
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-            >
-            <Navber/>
-            {children}
-          </ThemeProvider>
-        </div>
+        <StoreProvider>
+          <div className="flex flex-row h-screen p-8">
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+              >
+              <Navber/>
+              {children}
+            </ThemeProvider>
+          </div>
+        </StoreProvider>
       </body>
     </html>
   );
